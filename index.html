@@ -10,14 +10,13 @@
     <!--Calender Layout --Byron --> 
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><!--BOOTSTRAP-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--Jquery via GoogleCDN for faster loading times (Optimization)-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--Jquery for faster loading times (Optimization)-->
 </head>
 <body>
     <!--Bootstrap Styling-->
-    <main class="d-flex min-vh-100 bg-dark">
+    <main class="min-vh-100 bg-dark">
         <div class="container-fluid">
           <h1 class="display-2 text-light">TheOneCal</h1>
-          <div class="row justify-content-center">
     <!--INVISIBLE MODALS-->
     <div class="modal-dialog" hidden>
         <div class="modal-content">
@@ -67,10 +66,38 @@
         </div>
       </div>
       <!--MODALS END-->
+
     <!--WEEK VIEW DIV-->
-    <button type="btn" onclick="toggleWeek();">Week View Toggle</button>
-    <div class="container" id="toggleWeek">
-        <div class="row align-items-center">
+        <button class="row" type="btn" onclick="toggleWeek();">Week View Toggle</button>
+        <div class="row align-items-center" id="toggleWeek">
+            <div class="col" id="1">
+                <h1 class="display-5 text-light" id="1d">Day One</h1>
+                <p></p>
+            </div>
+            <div class="col" id="2">
+                <h1 class="display-5 text-light">Day Two</h1>
+                <p></p>
+            </div>
+            <div class="col" id="3">
+                <h1 class="display-5 text-light">Day THree</h1>
+                <p></p>
+            </div>
+            <div class="col" id="4">
+                Four columns
+            </div>
+            <div class="col" id="5">
+                Five columns
+            </div>
+            <div class="col" id="6">
+                Six columns
+            </div>
+            <div class="col" id="7">
+                Seven columns
+            </div>
+        </div>
+    <!--MONTH DIV VIEW-->
+    <button class="row" type="btn" onclick="toggleMonth();">Month View Toggle</button>
+        <div class="row align-items-center" id="toggleMonth">
             <div class="col" id="1">
                 <h1 class="display 5">One columns</h1>
                 <p></p>
@@ -96,8 +123,6 @@
         </div>
     </div>
   </div>
-  </div>
-</div>
 </main>
 <!--NO HTML BEYOND THIS POINT -- SCRIPTS-->
 <script src="./assets/js/script.js"></script>
