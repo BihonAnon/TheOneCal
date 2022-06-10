@@ -11,7 +11,22 @@ function toggleWeek() {
     } else {
         toggleWeekEl.style.display = "none";
     }
+    var week1d = moment().subtract(1, 'days').format("dddd, DD");
+    $("#1d").text(week1d);
+    var week2d = moment().format("dddd, DD");
+    $("#2d").text(week2d);
+    var week3d = moment().add(1, 'days').format("dddd, DD");
+    $("#3d").text(week3d);
+    var week4d = moment().add(2, 'days').format("dddd, DD");
+    $("#4d").text(week4d);
+    var week5d = moment().add(3, 'days').format("dddd, DD");
+    $("#5d").text(week5d);
+    var week6d = moment().add(4, 'days').format("dddd, DD");
+    $("#6d").text(week6d);
+    var week7d = moment().add(5, 'days').format("dddd, DD");
+    $("#7d").text(week7d);
 }
+
 function toggleMonth() {
     var toggleMonthEl = document.getElementById("toggleMonth");
     if (toggleMonthEl.style.display === "none") {
@@ -26,11 +41,7 @@ Get: $("#someInputId").val(); // returns value of #someInputId */
 /*Jquery class manipulation
 $('.my_class').removeClass('my_class').addClass('normal_element');*/
 function calenderDisplayWeek(){
-    var todaysDate = moment().format("dddd,MM,DD,YYYY"); // "Sunday,02,14,2010"
-    var todayDateNumber = moment().format("DD"); // "14"
-    var weekArray = [[],["id=idDay2"],["id=idDay3"],["id=idDay4"],["id=idDay5"],["id=idDay6"],["id=idDay7"]]
-    //Array Generation
-    weekArray.push([idDay1, 0])
+
 }
 
 function calenderDisplayDayScrollingLong(dayid){
