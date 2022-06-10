@@ -5,34 +5,45 @@
 */
 /* ------------ [1. toggle (Hidden/NotHidden Function)] ------------ */
 function toggleWeek() {
-  var toggleWeekEl = document.getElementById("toggleWeek");
-  if (toggleWeekEl.style.display === "none") {
-    toggleWeekEl.style.display = "block";
-  } else {
-    toggleWeekEl.style.display = "none";
-  }
+    var toggleWeekEl = document.getElementById("toggleWeek");
+    if (toggleWeekEl.style.display === "none") {
+        toggleWeekEl.style.display = "";
+    } else {
+        toggleWeekEl.style.display = "none";
+    }
+    var week1d = moment().subtract(1, 'days').format("dddd, DD");
+    $("#1d").text(week1d);
+    var week2d = moment().format("dddd, DD");
+    $("#2d").text(week2d);
+    var week3d = moment().add(1, 'days').format("dddd, DD");
+    $("#3d").text(week3d);
+    var week4d = moment().add(2, 'days').format("dddd, DD");
+    $("#4d").text(week4d);
+    var week5d = moment().add(3, 'days').format("dddd, DD");
+    $("#5d").text(week5d);
+    var week6d = moment().add(4, 'days').format("dddd, DD");
+    $("#6d").text(week6d);
+    var week7d = moment().add(5, 'days').format("dddd, DD");
+    $("#7d").text(week7d);
 }
+
+function toggleMonth() {
+    var toggleMonthEl = document.getElementById("toggleMonth");
+    if (toggleMonthEl.style.display === "none") {
+      toggleMonthEl.style.display = "";
+    } else {
+      toggleMonthEl.style.display = "none";
+    }
+  }
 /*Jquery Get/Set Functions
 Set: $("#someInputId").val("Value you want it to have here");
 Get: $("#someInputId").val(); // returns value of #someInputId */
 /*Jquery class manipulation
 $('.my_class').removeClass('my_class').addClass('normal_element');*/
 function calenderDisplayWeek(){
-    var todaysDate = moment().format("dddd,MM,DD,YYYY"); // "Sunday,02,14,2010"
-    var todayDateNumber = moment().format("DD"); // "14"
-    var idDay1 = moment().format("DD");
-    var idDay2 = moment().format("DD")+1;
-    var idDay3 = moment().format("DD")+2;
-    var idDay4 = moment().format("DD")+3;
-    var idDay5 = moment().format("DD")+4;
-    var idDay6 = moment().format("DD")+5;
-    var idDay7 = moment().format("DD")+6;
-
-    var weekArray = [[],["id=idDay2"],["id=idDay3"],["id=idDay4"],["id=idDay5"],["id=idDay6"],["id=idDay7"]]
-    //Array Generation
-    weekArray.push([idDay1, 0])
 
 }
+
 function calenderDisplayDayScrollingLong(dayid){
 
 }
