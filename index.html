@@ -73,237 +73,88 @@
                 </div>
             </div>
         </div>
-
-        <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog"
-            aria-labelledby="project-modal-form" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="project-modal-form">Add a new project.</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form id="project-form">
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="event-type-input">Event Name</label>
-                                <input type="text" id="eventt-name-input" class="form-control"
-                                    placeholder="Enter the event's name" required />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="start-date-input">Start Date</label>
-                                <input type="number" id="start-date-input" class="form-control"
-                                    placeholder="When does the event start" min="0" required />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="due-date-input">Due Date</label>
-                                <input type="text" min="1" id="due-date-input" class="form-control"
-                                    placeholder="When this event is over" required />
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn custom-btn">Submit Event Info</button>
-                            </div>
+        <div class="row">
+            <section class="col-12 col-md-4 col-lg-3">
+                <div class="card custom-card">
+                    <h3 class="card-header">
+                        Instructions
+                    </h3>
+                    <div class="card-body">
+                        <div class="card-text">
+                            Click the button below to open a form and provide information for the following:
                         </div>
-                    </form>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Project Name</li>
+                        <li class="list-group-item">Start Date</li>
+                        <li class="list-group-item">Due Date</li>
+                    </ul>
+                    <div class="card-footer">
+                        <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#project-modal">Add
+                            Project</button>
+                    </div>
                 </div>
-            </div>
-            <div id="notes">
+            </section>
 
-            </div>
+            <section class="col-12 col-md-8 col-lg-9">
+                <div class="table-responsive">
+                    <table class="table table-bordered custom-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Project Name</th>
+                                <th scope="col">Project Type</th>
+                                <th scope="col">Due Date</th>
+                                <th scope="col" class="p-3"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="project-display"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
     </main>
 
+    <!-- Modal -->
+    <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog"
+        aria-labelledby="project-modal-form" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="project-modal-form">Add a new project.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="project-form">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="event-type-input">Event Name</label>
+                            <input type="text" id="eventt-name-input" class="form-control"
+                                placeholder="Enter the event's name" required />
+                        </div>
 
-    <!--MONTH DIV VIEW-->
-    <!--[TODO FOR MONTH VIEW]-->
-    <!--[divs for setting up 7x5 grid, ids 1m->35m]-->
-    <button class="row" type="btn" onclick="toggleMonth();">Month View Toggle</button>
-    <div class="align-items-center w-100 mx-auto" id="toggleMonth">
-        <div class="row align-items-center justify-content-center">
-            <div class="monthContainers col-1">
-                <h1 id="1-1Md" class="display-5 text-light">1-1m</h1>
-                <div class="h-100 p-3 border rounded-3" id="1-1m">
-                    <!--EVENTS CONTAINER-->
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="1-2md" class="display-5 text-light">1-2M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="1-2m">
-                        <!--EVENTS CONTAINER-->
+                        <div class="form-group">
+                            <label for="start-date-input">Start Date</label>
+                            <input type="text" min="1" id="start-date-input" class="form-control"
+                                placeholder="When does the event start" min="0" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="due-date-input">Due Date</label>
+                            <input type="text" min="1" id="due-date-input" class="form-control"
+                                placeholder="When this event is over" required />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn custom-btn">Submit Event Info</button>
+                        </div>
                     </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="1-3md" class="display-5 text-light">1-3M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="1-3m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="1-4md" class="display-5 text-light">1-4M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="1-4m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="1-5md" class="display-5 text-light">1-5M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="1-5m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="1-6md" class="display-5 text-light">1-6M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="1-6m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="1-7md" class="display-5 text-light">1-7M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="1-7m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
+                </form>
             </div>
-            <!--row-->
-            <div class="row align-items-center justify-content-center">
-                <div class="monthContainers col-1">
-                    <h1 id="2-1md" class="display-5 text-light">2-1M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="2-1m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="2-2md" class="display-5 text-light">2-2M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="2-2m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="2-3md" class="display-5 text-light">2-3M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="2-3m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="2-4md" class="display-5 text-light">2-4M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="2-4m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="2-5md" class="display-5 text-light">2-5M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="2-5m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="2-6md" class="display-5 text-light">2-6M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="2-6m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="2-7md" class="display-5 text-light">2-7M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="2-7m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-            </div>
-            <!--ROW-->
-            <div class="row align-items-center justify-content-center">
-                <div class="monthContainers col-1">
-                    <h1 id="3-1md" class="display-5 text-light">3-1M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="3-1m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="3-2md" class="display-5 text-light">3-2M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="3-2m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="3-3md" class="display-5 text-light">3-3M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="3-3m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="3-4md" class="display-5 text-light">3-4M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="3-4m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="3-5md" class="display-5 text-light">3-5M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="3-5m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="3-6md" class="display-5 text-light">3-6M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="3-6m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="3-7md" class="display-5 text-light">3-7M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="3-7m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-            </div>
-            <!--row-->
-            <div class="row align-items-center justify-content-center">
-                <div class="monthContainers col-1">
-                    <h1 id="4-1md" class="display-5 text-light">4-1M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="4-1m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="4-2md" class="display-5 text-light">4-2M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="4-2m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="4-3md" class="display-5 text-light">4-3M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="4-3m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="4-4md" class="display-5 text-light">4-4M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="4-4m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="4-5md" class="display-5 text-light">4-5M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="4-5m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="4-6md" class="display-5 text-light">4-6M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="4-6m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="monthContainers col-1">
-                    <h1 id="4-7md" class="display-5 text-light">4-7M</h1>
-                    <div class="h-100 p-3 border rounded-3" id="4-7m">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-            </div>
-            <!--lAST ROW-->
         </div>
     </div>
-    </div>
+    </main>
+
 
     <!--NO HTML BEYOND THIS POINT -- SCRIPTS-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
