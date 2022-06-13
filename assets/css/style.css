@@ -19,3 +19,13 @@
   word-break: break-word;
   border: 0;
 }
+
+.custom-card {
+  border-color: var(--teal);
+  color: var(--brown);
+}
+
+.custom-card-header {
+  background-color: var(--teal);
+  color: var(--lightteal);
+}
