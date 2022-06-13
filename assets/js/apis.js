@@ -27,6 +27,7 @@ function fetchaApi(lat, long) {
 
     $.ajax(settings).done(function (response) {
       console.log(response);
+      console.log('www')
       for (i = 0; i < response.data.length - 33; i++) {
         arrayOfTemp.push(response.data[i].temp)
         console.log(arrayOfTemp)
