@@ -12,6 +12,11 @@ var eventNameInputEl = $('#project-name-input');
 var startDateInputEl = $('#hourly-rate-input');
 var dueDateInputEl = $('#due-date-input');
 
+function displayTime() {
+  var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
+  timeDisplayEl.text(rightNow);
+}
+
 function toggleWeek() {
   var toggleWeekEl = document.getElementById("toggleWeek");
   if (toggleWeekEl.style.display === "none") {
@@ -75,3 +80,32 @@ function handleProjectFormSubmit(event) {
 projectFormEl.on('submit', handleProjectFormSubmit);
 projectDisplayEl.on('click', '.delete-project-btn', handleDeleteProject);
 dueDateInputEl.datepicker({ minDate: 1 });
+
+function printProjectData(name, startDate, dueDate) {
+  var projectRowEl = $('<tr>');
+
+  var projectNameTdEl = $('<td>').addClass('p-2').text(name);
+
+  var projectTypeTdEl = $('<td>').addClass('p-2').text(startDate);
+
+  var dueDateTdEl = $('<td>').addClass('p-2').text(dueDate);
+
+  var daysToDate = moment(dueDate, 'MM/DD/YYYY').diff(moment(), 'days');
+  var daysLeftTdEl = $('<td>').addClass('p-2').text(daysToDate);
+
+  var deleteProjectBtn = $('<td>')
+  .addClass('p-2 delete-project-btn text-center')
+  .text('X');
+
+  projectRowEl.append(
+    projectNameTdEl,
+    projectTypeTdEl,
+    dueDateTdEl,
+    daysLeftTdEl,
+    deleteProjectBtn
+  );
+
+projectDisplayEl.append(projectRowEl);
+projectModalEl.modal("hide");
+projectDisplayEl.on("click, '.delete-project-btn", handleDeleteProject);
+}
