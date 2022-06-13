@@ -19,56 +19,12 @@
 </head>
 
 <body>
+    
     <!--Bootstrap Styling-->
     <main class="min-vh-100 bg-dark">
         <div class="container-fluid">
             <h1 class="display-2 text-light">TheOneCal</h1>
-            <!--INVISIBLE MODALS-->
-            <!-- <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header text-center">
-                            <h4 class="modal-title w-100 font-weight-bold">Write to us</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body mx-3">
-                            <div class="md-form mb-5">
-                                <i class="fas fa-user prefix grey-text"></i>
-                                <input type="text" id="form34" class="form-control validate">
-                                <label data-error="wrong" data-success="right" for="form34">Your name</label>
-                            </div>
-
-                            <div class="md-form mb-5">
-                                <i class="fas fa-envelope prefix grey-text"></i>
-                                <input type="email" id="form29" class="form-control validate">
-                                <label data-error="wrong" data-success="right" for="form29">Your email</label>
-                            </div>
-
-                            <div class="md-form mb-5">
-                                <i class="fas fa-tag prefix grey-text"></i>
-                                <input type="text" id="form32" class="form-control validate">
-                                <label data-error="wrong" data-success="right" for="form32">Subject</label>
-                            </div>
-
-                            <div class="md-form">
-                                <i class="fas fa-pencil prefix grey-text"></i>
-                                <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
-                                <label data-error="wrong" data-success="right" for="form8">Your message</label>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer d-flex justify-content-center">
-                            <button class="btn btn-unique">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- MODALS END -->
-
+            <button class="row" type="btn" onclick="populateWeekView();">populate</button>
             <!--WEEK VIEW DIV-->
             <button class="row" type="btn" onclick="toggleWeek();">Week View Toggle</button>
             <div class="row align-items-center" id="toggleWeek">
@@ -115,40 +71,9 @@
                     </div>
                 </div>
             </div>
-            <!--MONTH DIV VIEW-->
-            <!--[TODO FOR MONTH VIEW]-->
-            <!--[divs for setting up 7x5 grid, ids 1m->35m]-->
-            <button class="row" type="btn" onclick="toggleMonth();">Month View Toggle</button>
-            <div class="row align-items-center" id="toggleMonth">
-                <div class="col" id="1m">
-                    <h1 class="display 5">One columns</h1>
-                    <p></p>
-                </div>
-                <div class="col" id="2m">
-                    Two columns
-                </div>
-                <div class="col" id="3m">
-                    Three columns
-                </div>
-                <div class="col" id="4m">
-                    Four columns
-                </div>
-                <div class="col" id="5m">
-                    Five columns
-                </div>
-                <div class="col" id="6m">
-                    Six columns
-                </div>
-                <div class="col" id="7m">
-                    Seven columns
-                </div>
-            </div>
         </div>
 
-        </div>
-    </main>
-
-    <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog"
+        <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog"
         aria-labelledby="project-modal-form" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
@@ -181,7 +106,16 @@
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn custom-btn">Submit Event Info</button>
                         </div>
+                    </div>
                 </form>
+            </div>
+        </div>
+        <div id="notes">
+
+        </div>
+    </main>
+
+    
     <!--MONTH DIV VIEW-->
     <!--[TODO FOR MONTH VIEW]-->
     <!--[divs for setting up 7x5 grid, ids 1m->35m]-->
@@ -371,7 +305,6 @@
     </div>
 
         <!--NO HTML BEYOND THIS POINT -- SCRIPTS-->
-        <script src="./assets/js/script.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -388,6 +321,8 @@
             integrity="sha512-vFABRuf5oGUaztndx4KoAEUVQnOvAIFs59y4tO0DILGWhQiFnFHiR+ZJfxLDyJlXgeut9Z07Svuvm+1Jv89w5g=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <!--Moment-->
+        <script src="./assets/js/script.js"></script>
+        <!--JAVASCRIPT GOES LAST-->
 </body>
 
 </html>
