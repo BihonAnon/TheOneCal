@@ -19,11 +19,12 @@
 </head>
 
 <body>
+    
     <!--Bootstrap Styling-->
     <main class="min-vh-100 bg-dark">
         <div class="container-fluid">
             <h1 class="display-2 text-light">TheOneCal</h1>
-
+            <button class="row" type="btn" onclick="populateWeekView();">populate</button>
             <!--WEEK VIEW DIV-->
             <button class="row" type="btn" onclick="toggleWeek();">Week View Toggle</button>
             <div class="row align-items-center" id="toggleWeek">
@@ -72,8 +73,46 @@
             </div>
         </div>
 
+        <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog"
+        aria-labelledby="project-modal-form" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="project-modal-form">Add a new project.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="project-form">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="event-type-input">Event Name</label>
+                            <input type="text" id="eventt-name-input" class="form-control"
+                                placeholder="Enter the event's name" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="start-date-input">Start Date</label>
+                            <input type="number" id="start-date-input" class="form-control"
+                                placeholder="When does the event start" min="0" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="due-date-input">Due Date</label>
+                            <input type="text" min="1" id="due-date-input" class="form-control"
+                                placeholder="When this event is over" required />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn custom-btn">Submit Event Info</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        
+        <div id="notes">
+
+        </div>
     </main>
 
     
@@ -266,7 +305,6 @@
     </div>
 
         <!--NO HTML BEYOND THIS POINT -- SCRIPTS-->
-        <script src="./assets/js/script.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -283,6 +321,8 @@
             integrity="sha512-vFABRuf5oGUaztndx4KoAEUVQnOvAIFs59y4tO0DILGWhQiFnFHiR+ZJfxLDyJlXgeut9Z07Svuvm+1Jv89w5g=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <!--Moment-->
+        <script src="./assets/js/script.js"></script>
+        <!--JAVASCRIPT GOES LAST-->
 </body>
 
 </html>
