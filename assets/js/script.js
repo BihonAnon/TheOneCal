@@ -40,14 +40,7 @@ function toggleWeek() {
   $("#7d").text(week7d);
 }
 
-function toggleMonth() {
-  var toggleMonthEl = document.getElementById("toggleMonth");
-  if (toggleMonthEl.style.display === "none") {
-    toggleMonthEl.style.display = "";
-  } else {
-    toggleMonthEl.style.display = "none";
-  }
-}
+
 /*Jquery Get/Set Functions
 Set: $("#someInputId").val("Value you want it to have here");
 Get: $("#someInputId").val(); // returns value of #someInputId */
