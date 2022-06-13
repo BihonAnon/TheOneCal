@@ -72,14 +72,17 @@
                 </div>
             </div>
         </div>
+        <div id="notesdisplay">
+            <button id="notesCreate" type="btn" onclick="createNewNote();">Create Note</button>
 
+        </div>
         <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog"
         aria-labelledby="project-modal-form" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="project-modal-form">Add a new project.</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -87,7 +90,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="event-type-input">Event Name</label>
-                            <input type="text" id="eventt-name-input" class="form-control"
+                            <input type="text" id="event-name-input" class="form-control"
                                 placeholder="Enter the event's name" required />
                         </div>
 
@@ -110,13 +113,11 @@
                 </form>
             </div>
         </div>
-        <div id="notes">
-
         </div>
     </main>
 
     
-    <!--MONTH DIV VIEW-->
+    <!-- MONTH DIV VIEW -->
     <!--[TODO FOR MONTH VIEW]-->
     <!--[divs for setting up 7x5 grid, ids 1m->35m]-->
     <button class="row" type="btn" onclick="toggleMonth();">Month View Toggle</button>
@@ -299,7 +300,7 @@
                         <!--EVENTS CONTAINER-->
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!--lAST ROW-->
         </div>
     </div>

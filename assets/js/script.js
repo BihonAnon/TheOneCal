@@ -26,6 +26,7 @@ var w4displayEl = $('#4w');
 var w5displayEl = $('#5w');
 var w6displayEl = $('#6w');
 var w7displayEl = $('#7w');
+var notesDisplayEl = $("#notesdisplay")
 
 var week1d = moment().subtract(1, 'days').format("dddd, DD");
 var week2d = moment().format("dddd, DD");
@@ -265,14 +266,27 @@ Set: $("#someInputId").val("Value you want it to have here");
 Get: $("#someInputId").val(); // returns value of #someInputId */
 /*Jquery class manipulation
 $('.my_class').removeClass('my_class').addClass('normal_element');*/
+function createSticky(eventName, eventDescription, isMeme){
+  if(isMeme === 'true'){
+    var cardEl = $('<div>')
+    
+  }
+  var cardEl = $('<div>');
+  // Add a class of .custom-card
+  cardEl.addClass('card h-100 custom-card');
+  cardEl.appendTo(notesDisplayEl);
+  var cardName = $('<h5>').addClass('card-header custom-card-header').text(eventName);
+  cardName.appendTo(cardEl);
 
-function calenderDisplayDayScrollingLong(dayid) {
+  var cardBodyEl = $('<div>');
+  cardBodyEl.addClass('card-body');
+  cardBodyEl.appendTo(cardEl);
 
+  var cardComment = $('<p>').addClass('card-text').text(eventDescription);
+  cardComment.appendTo(cardBodyEl);
+
+  notesDisplayEl.append(cardEl);
 }
-$(document).ready(function () {
-
-});
-
 function handleProjectFormSubmit(event) {
   event.preventDefault();
 
