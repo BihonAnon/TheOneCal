@@ -21,8 +21,19 @@
 }
 
 .custom-card {
-  border-color: var(--teal);
-  color: var(--brown);
+  background-color: gray;
+  border-color: teal;
+  color: black;
+  padding: 5px 10px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  left: 1350px;
+}
+
+.card-header, .card-footer {
+  background: teal;
 }
 
 .custom-card-header {

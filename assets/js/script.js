@@ -361,7 +361,6 @@ $(document).ready(function () {
 })
 
 projectFormEl.on('submit', handleProjectFormSubmit);
-projectDisplayEl.on('click', '.delete-project-btn', handleDeleteProject);
 dueDateInputEl.datepicker({ minDate: 1 });
 
 /* -------------------[4 Event Create]------------ */
