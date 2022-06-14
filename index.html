@@ -74,75 +74,73 @@
         </div>
 
         <!--FORM FOR STICKY NOTES-->
-        <div>
-            <form class="h-100 w-50 border rounded-3">
-                <div class="mb-1">
-                  <label for="sticky-title" class="form-label text-light">Sticky Note Title:</label>
-                  <input type="text" class="form-control" id="sticky-title" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-1">
-                  <div class="form-text text-light">What will you notate?</div>
-                  <input type="text" class="form-control" id="sticky-description">
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="sticky-is-meme">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" id="stickySubmit" class="btn btn-primary">Submit</button>
-            </form>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Write A StickyNote!
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="mb-1">
+                <label for="sticky-title" class="form-label text-light">Sticky Note Title:</label>
+                <input type="text" class="form-control" id="sticky-title" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-1">
+                <div class="form-text text-light">What will you notate?</div>
+                <input type="text" class="form-control" id="sticky-description">
+            </div>
+            <button class="row button-34" id="notesCreate" type="btn" onclick="createSticky();">Create Note</button>
         </div>
         <!--FORM FOR STICKY END-->
 
         <!--NOTES DISPLAY DIV-->
         <div id="notesdisplay">
-            <button id="memeCreate" type="btn" onclick="createStickyMeme();">Want Meme?</button>
-            <button id="notesCreate" type="btn" onclick="createSticky();">Create Note</button>
+            <button class="row button-34" id="memeCreate" type="btn" onclick="createStickyMeme();">Want Meme?</button>
+            
             <!--CONTENT APPENDED IN JS-->
         </div>
         <div id="memesdisplay">
-            
+
         </div>
         <!--NOTES DISPLAY DIV END-->
         <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog">
-        <div class="row">
-            <section class="col-12 col-md-4 col-lg-3">
-                <div class="card custom-card">
-                    <h3 class="card-header">
-                        Instructions
-                    </h3>
-                    <div class="card-body">
-                        <div class="card-text">
-                            Click the button below to open a form and provide information for the following:
+            <div class="row">
+                <section class="col-12 col-md-4 col-lg-3">
+                    <div class="card custom-card">
+                        <h3 class="card-header">
+                            Instructions
+                        </h3>
+                        <div class="card-body">
+                            <div class="card-text">
+                                Click the button below to open a form and provide information for the following:
+                            </div>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Project Name</li>
+                            <li class="list-group-item">Start Date</li>
+                            <li class="list-group-item">Due Date</li>
+                        </ul>
+                        <div class="card-footer">
+                            <button class="btn btn-block custom-btn" data-toggle="modal"
+                                data-target="#project-modal">Add
+                                Project</button>
                         </div>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Project Name</li>
-                        <li class="list-group-item">Start Date</li>
-                        <li class="list-group-item">Due Date</li>
-                    </ul>
-                    <div class="card-footer">
-                        <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#project-modal">Add
-                            Project</button>
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            <section class="col-12 col-md-8 col-lg-9">
-                <div class="table-responsive">
-                    <table class="table table-bordered custom-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Project Name</th>
-                                <th scope="col">Project Type</th>
-                                <th scope="col">Due Date</th>
-                                <th scope="col" class="p-3"></th>
-                            </tr>
-                        </thead>
-                        <tbody id="project-display"></tbody>
-                    </table>
-                </div>
-            </section>
-        </div>
+                <section class="col-12 col-md-8 col-lg-9">
+                    <div class="table-responsive">
+                        <table class="table table-bordered custom-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Project Name</th>
+                                    <th scope="col">Project Type</th>
+                                    <th scope="col">Due Date</th>
+                                    <th scope="col" class="p-3"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="project-display"></tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
     </main>
 
     <!-- Modal -->
