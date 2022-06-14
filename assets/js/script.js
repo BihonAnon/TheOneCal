@@ -134,7 +134,7 @@ function displayEventw1(eventName, eventDescription, eventStartTime, eventEndTim
 
   var cardTimes = $('<p>').addClass('card-text').text(eventStartTime + "->" + eventEndTime);
   var cardComment = $('<p>').addClass('card-text').text(eventDescription);
-  cardTimes.appendTo(cardBodyEl);
+  //cardTimes.appendTo(cardBodyEl);
   cardComment.appendTo(cardBodyEl);
 
   w1displayEl.append(cardEl);
@@ -156,7 +156,7 @@ function displayEventw2(eventName, eventDescription, eventStartTime, eventEndTim
 
   var cardTimes = $('<p>').addClass('card-text').text(eventStartTime + "->" + eventEndTime);
   var cardComment = $('<p>').addClass('card-text').text(eventDescription);
-  cardTimes.appendTo(cardBodyEl);
+  //cardTimes.appendTo(cardBodyEl);
   cardComment.appendTo(cardBodyEl);
 
   w2displayEl.append(cardEl);
@@ -178,7 +178,7 @@ function displayEventw3(eventName, eventDescription, eventStartTime, eventEndTim
 
   var cardTimes = $('<p>').addClass('card-text').text(eventStartTime + "->" + eventEndTime);
   var cardComment = $('<p>').addClass('card-text').text(eventDescription);
-  cardTimes.appendTo(cardBodyEl);
+  //cardTimes.appendTo(cardBodyEl);
   cardComment.appendTo(cardBodyEl);
 
   w3displayEl.append(cardEl);
@@ -200,7 +200,7 @@ function displayEventw4(eventName, eventDescription, eventStartTime, eventEndTim
 
   var cardTimes = $('<p>').addClass('card-text').text(eventStartTime + "->" + eventEndTime);
   var cardComment = $('<p>').addClass('card-text').text(eventDescription);
-  cardTimes.appendTo(cardBodyEl);
+  //cardTimes.appendTo(cardBodyEl);
   cardComment.appendTo(cardBodyEl);
 
   w4displayEl.append(cardEl);
@@ -222,7 +222,7 @@ function displayEventw5(eventName, eventDescription, eventStartTime, eventEndTim
 
   var cardTimes = $('<p>').addClass('card-text').text(eventStartTime + "->" + eventEndTime);
   var cardComment = $('<p>').addClass('card-text').text(eventDescription);
-  cardTimes.appendTo(cardBodyEl);
+  //cardTimes.appendTo(cardBodyEl);
   cardComment.appendTo(cardBodyEl);
 
   w5displayEl.append(cardEl);
@@ -244,7 +244,7 @@ function displayEventw6(eventName, eventDescription, eventStartTime, eventEndTim
 
   var cardTimes = $('<p>').addClass('card-text').text(eventStartTime + "->" + eventEndTime);
   var cardComment = $('<p>').addClass('card-text').text(eventDescription);
-  cardTimes.appendTo(cardBodyEl);
+  //cardTimes.appendTo(cardBodyEl);
   cardComment.appendTo(cardBodyEl);
 
   w6displayEl.append(cardEl);
@@ -266,7 +266,7 @@ function displayEventw7(eventName, eventDescription, eventStartTime, eventEndTim
 
   var cardTimes = $('<p>').addClass('card-text').text(eventStartTime + "->" + eventEndTime);
   var cardComment = $('<p>').addClass('card-text').text(eventDescription);
-  cardTimes.appendTo(cardBodyEl);
+  //cardTimes.appendTo(cardBodyEl);
   cardComment.appendTo(cardBodyEl);
 
   w7displayEl.append(cardEl);
