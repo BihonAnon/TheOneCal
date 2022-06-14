@@ -5,7 +5,8 @@ One calendar to rule them all
 This application helps the user stay organized by saving events for each day of the week. The application will run in the browser and feature updated HTML and CSS and is powered by jQuery.code.
 
 ## Description
-A calendar application that allows the user to save events for each day of the week. The current day of the week will be highlighted for the user to see more clearly. There are memes as well to hopefully brighten any mood the user may be in with a single click of a button. Lastly, there is a sticky notes button so the user may decide if they need someonething to remember on the side that may not make it to the event category.
+A calendar application that allows the user to save events for each day of the week. The current day and time of the week will be displayed at the top for the user. There are memes as well to hopefully brighten any mood the user may be in with a single click of a button. There is also a live weather feed on the upper right side of the application that will be specifically for the users location. Lastly, there is a sticky notes button so the user may decide if they need someonething to remember on the side that may not make it to the event category.
+
 
 ## User Story
 AS AN employee with a busy schedule
@@ -18,7 +19,7 @@ WHEN I open the planner
 THEN the current day is highlighted
 WHEN I scroll down
 THEN I am presented with each day of the week
-WHEN I view the time blocks for that day
+WHEN I view the date blocks for that day
 WHEN I click into the "create event button"
 THEN I can enter an event
 
@@ -38,3 +39,4 @@ The following image shows the application functionality:
 * moment.js library for Date and Time
 
 ## Website
+https://youraveragecat.github.io/TheOneCal/
