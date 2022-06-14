@@ -20,7 +20,8 @@
   border: 0;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 700;
 }
 
@@ -37,8 +38,8 @@ h1, h2 {
 .custom-card {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  left: 500px;
+  /* align-items: center; */
+  /* left: 500px; */
 }
 
 div#memesdisplay {
