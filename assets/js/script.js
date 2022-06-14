@@ -11,13 +11,13 @@ var eventDate = []
 var eventStartTime = []
 var eventEndTime = []
 /* ------------ [1. toggle (Hidden/NotHidden Function)] ------------ */
-// var timeDisplayEl = $('#time-display');
-// var projectDisplayEl = $('#project-display');
-// var projectModalEl = $('#project-modal');
-// var projectFormEl = $('#project-form');
-// var eventNameInputEl = $('#project-name-input');
-// var startDateInputEl = $('#hourly-rate-input');
-// var dueDateInputEl = $('#due-date-input');
+var timeDisplayEl = $('#time-display');
+var projectDisplayEl = $('#project-display');
+var projectModalEl = $('#project-modal');
+var projectFormEl = $('#project-form');
+var eventNameInputEl = $('#project-name-input');
+var startDateInputEl = $('#start-date-input');
+var dueDateInputEl = $('#due-date-input');
 
 /* STUFF */
 var w1displayEl = $('#1w');
@@ -39,6 +39,14 @@ var memesDisplayEl = $("#memesdisplay")
 // var week5d = moment().add(3, 'days').format("dddd, DD");
 // var week6d = moment().add(4, 'days').format("dddd, DD");
 // var week7d = moment().add(5, 'days').format("dddd, DD");
+
+// Displays time
+function displayTime() {
+  var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
+  timeDisplayEl.text(rightNow);
+}
+
+setInterval(displayTime, 1000);
 
 function toggleWeek() {
   var toggleWeekEl = document.getElementById("toggleWeek");
@@ -385,6 +393,7 @@ function createAnEvent() {
   var N4 = eventEndTime.push("00:01");
   var N2 = eventDescription.push(eventDescriptionEl);
   console.log(eventDescription);
+
 
   // var eventDescription = []
   // var eventDate = []
