@@ -30,15 +30,37 @@ background-color: rgb(21, 42, 49);
 }
 
 .custom-card {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  left: 500px;
+}
+
+div#memesdisplay {
+  width: 750px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.memesdisplay {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 350px;
+}
+
+.custom-card2 {
   background-color: gray;
   border-color: teal;
   color: black;
   padding: 5px 10px;
-  display:flex;
-  flex-wrap: wrap;
+  display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  left: 1350px;
+  left: 1360px;
+  bottom: 50px;
 }
 
 .card-header, .card-footer {

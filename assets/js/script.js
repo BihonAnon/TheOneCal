@@ -315,7 +315,7 @@ function createStickyMeme() {
   getApi(requestUrl);
   console.log(memeImgURL);
   var cardEl = $('<div>'); //ambigous Card
-  cardEl.addClass('card h-25 w-25 custom-card'); //add styling
+  cardEl.addClass('card h-25 w-25 custom-card3'); //add styling
   cardEl.addClass('img-fluid');
   var memeImgEl = $('<img>'); //add image tag 
   memeImgEl.attr('src', memeImgURL);
