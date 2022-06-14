@@ -82,3 +82,24 @@ div#memesdisplay {
 .day-of-the-week {
   min-height: 360px;
 }
+
+.solution_card {
+  background: linear-gradient(0deg, rgb(102, 193, 184) 0%, rgb(237, 249, 248) 63%);
+  padding: 24px;
+  box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2),
+    0 5px 15px 0 rgba(37, 44, 97, 0.15);
+  border-radius: 15px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.7s;
+}
+
+.wheather-city {
+  color: #e18397;
+}
+
+.icoon {
+  min-width: 50px;
+  min-height: 50px;
+}
