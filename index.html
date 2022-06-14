@@ -25,7 +25,6 @@
     <main class="min-vh-100 bg-dark">
         <div class="container-fluid">
             <h1 class="display-2 text-light">TheOneCal</h1>
-            <button class="row" type="btn" onclick="populateWeekView();">populate</button>
             <!--WEEK VIEW DIV-->
             <button class="row button-34" type="btn" onclick="toggleWeek();">Week View Toggle</button>
             <div class="row align-items-center" id="toggleWeek">
@@ -73,10 +72,37 @@
                 </div>
             </div>
         </div>
-        <div id="notesdisplay">
-            <button id="notesCreate" type="btn" onclick="createNewNote();">Create Note</button>
 
+        <!--FORM FOR STICKY NOTES-->
+        <div>
+            <form class="h-100 w-50 border rounded-3">
+                <div class="mb-1">
+                  <label for="sticky-title" class="form-label text-light">Sticky Note Title:</label>
+                  <input type="text" class="form-control" id="sticky-title" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-1">
+                  <div class="form-text text-light">What will you notate?</div>
+                  <input type="text" class="form-control" id="sticky-description">
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="sticky-is-meme">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" id="stickySubmit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
+        <!--FORM FOR STICKY END-->
+
+        <!--NOTES DISPLAY DIV-->
+        <div id="notesdisplay">
+            <button id="memeCreate" type="btn" onclick="createStickyMeme();">Want Meme?</button>
+            <button id="notesCreate" type="btn" onclick="createSticky();">Create Note</button>
+            <!--CONTENT APPENDED IN JS-->
+        </div>
+        <div id="memesdisplay">
+            
+        </div>
+        <!--NOTES DISPLAY DIV END-->
         <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog">
         <div class="row">
             <section class="col-12 col-md-4 col-lg-3">
