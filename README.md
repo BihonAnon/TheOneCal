@@ -26,7 +26,7 @@ THEN I can enter an event
 The following image shows the application functionality:
 
 <div>
-    <img src="./assets/images/onecal.png" width="400px"/>
+    <img src="./assets/images/theonecal.jpg" width="400px"/>
 </div>
 
 ## Built With
