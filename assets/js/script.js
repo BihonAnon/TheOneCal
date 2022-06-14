@@ -5,19 +5,19 @@
 */
 
 /* ------------ [0. Arrays (for event storage)] ------------ */
-var eventName = ["name for Sunday, 12", "2 event name"]
-var eventDescription = ["desc for Sunday, 12", "desc for Monday"]
-var eventDate = ["Sunday, 12", "Monday, 13"]
-var eventStartTime = ["00:00", "01:00"]
-var eventEndTime = ["00:10", "02:00"]
+var eventName = []
+var eventDescription = []
+var eventDate = []
+var eventStartTime = []
+var eventEndTime = []
 /* ------------ [1. toggle (Hidden/NotHidden Function)] ------------ */
-var timeDisplayEl = $('#time-display');
-var projectDisplayEl = $('#project-display');
-var projectModalEl = $('#project-modal');
-var projectFormEl = $('#project-form');
-var eventNameInputEl = $('#project-name-input');
-var startDateInputEl = $('#hourly-rate-input');
-var dueDateInputEl = $('#due-date-input');
+// var timeDisplayEl = $('#time-display');
+// var projectDisplayEl = $('#project-display');
+// var projectModalEl = $('#project-modal');
+// var projectFormEl = $('#project-form');
+// var eventNameInputEl = $('#project-name-input');
+// var startDateInputEl = $('#hourly-rate-input');
+// var dueDateInputEl = $('#due-date-input');
 
 /* STUFF */
 var w1displayEl = $('#1w');
@@ -27,9 +27,11 @@ var w4displayEl = $('#4w');
 var w5displayEl = $('#5w');
 var w6displayEl = $('#6w');
 var w7displayEl = $('#7w');
+/* ---------[Notes Globals]--------*/
 var notesDisplayEl = $("#notesdisplay")
 var memesDisplayEl = $("#memesdisplay")
 
+/*------[Weeks ] ----*/
 var week1d = moment().subtract(1, 'days').format("dddd, DD");
 var week2d = moment().format("dddd, DD");
 var week3d = moment().add(1, 'days').format("dddd, DD");
@@ -45,19 +47,19 @@ function toggleWeek() {
   } else {
     toggleWeekEl.style.display = "none";
   }
-  // var week1d = moment().subtract(1, 'days').format("dddd, DD");
+  var week1d = moment().subtract(1, 'days').format('MM/DD/YYYY'); //06/15/2022
   $("#1d").text(week1d);
-  var week2d = moment().format("dddd, DD");
+  var week2d = moment().format('MM/DD/YYYY');
   $("#2d").text(week2d);
-  var week3d = moment().add(1, 'days').format("dddd, DD")
+  var week3d = moment().add(1, 'days').format('MM/DD/YYYY')
   $("#3d").text(week3d);
-  var week4d = moment().add(2, 'days').format("dddd, DD");
+  var week4d = moment().add(2, 'days').format('MM/DD/YYYY');
   $("#4d").text(week4d);
-  var week5d = moment().add(3, 'days').format("dddd, DD");
+  var week5d = moment().add(3, 'days').format('MM/DD/YYYY');
   $("#5d").text(week5d);
-  var week6d = moment().add(4, 'days').format("dddd, DD");
+  var week6d = moment().add(4, 'days').format('MM/DD/YYYY');
   $("#6d").text(week6d);
-  var week7d = moment().add(5, 'days').format("dddd, DD");
+  var week7d = moment().add(5, 'days').format('MM/DD/YYYY');
   $("#7d").text(week7d);
   for (let i = 0; i < eventDate.length; i++) {
     if (week1d === eventDate[i]) {
@@ -77,6 +79,26 @@ function toggleWeek() {
       displayEventw7(eventName[i], eventDescription[i], eventStartTime[i], eventEndTime[i])
     }
   }
+}
+/*-------[EventCreate Globals]--------*/
+
+function createAnEvent() {
+  /*-------[EventCreate Globals]--------*/
+  //Variable Population
+var eventTitleEl = $('#events-title').val();
+console.log(eventTitleEl);
+
+var eventDescriptionEl = $('#events-desc').val();
+console.log(eventDescriptionEl)
+  
+var datepickerEl = $('#datepicker').val();
+console.log(datepickerEl);
+
+var eventStartTimeEl = "00:00"
+var eventEndTimeEl = "00:01"
+
+
+  //Populate Arrays
 }
 // displayEventw1("name", "desc", "00:00", "00:01");
 function toggleMonth() {
@@ -247,66 +269,55 @@ Set: $("#someInputId").val("Value you want it to have here");
 Get: $("#someInputId").val(); // returns value of #someInputId */
 /*Jquery class manipulation
 $('.my_class').removeClass('my_class').addClass('normal_element');*/
-/* -------------------------------- [STICKY NOTES API 1] --------------------------- */
+/* -------------------------------- [MEME ~ Api-1] --------------------------- */
 var requestUrl = 'https://api.imgflip.com/get_memes';
-
 var responseText = document.getElementById('response-text');
 var memeImgURL
 function getApi(requestUrl) {
   fetch(requestUrl)
-    .then(function (response){
+    .then(function (response) {
       return response.json()
     })
     .then(function (response) {
       console.log(response);
-      
-      memeImgURL = response.data.memes[Math.floor(Math.random()*100)].url;
+
+      memeImgURL = response.data.memes[Math.floor(Math.random() * 100)].url;
       console.log(memeImgURL);
       // createSticky("null","null","true")
     });
-} //FINISH THIS
-
-/* ------- [2. Sticky Notes] --------*/
-function createSticky(){
+}
+/* ------- [2.1 Sticky Notes] --------*/
+function createSticky() {
+  //Modal 
   var eventName = $('#sticky-title').val()
   var eventDescription = $('#sticky-description').val()
-  // Modal Input
-    var cardEl = $('<div>');
-    cardEl.addClass('card h-25 w-25 custom-card'); //add styling
-    cardEl.text(eventName);
-    var cardDescEl = $('<p>')
-    cardDescEl.addClass('card h-25 w-25 custom-card')
-    cardDescEl.text(eventDescription);
-    cardDescEl.appendTo(cardEl);
-    cardEl.appendTo(notesDisplayEl);
-    $('#sticky-title').val('')
-    $('#sticky-description').val('')
-} // FINISH THIS
-
-
-function createStickyMeme(){
+  var cardEl = $('<div>');
+  cardEl.addClass('card h-25 w-25 custom-card'); //add styling
+  cardEl.text(eventName);
+  var cardDescEl = $('<p>')
+  cardDescEl.addClass('card h-25 w-25 custom-card')
+  cardDescEl.text(eventDescription);
+  cardDescEl.appendTo(cardEl);
+  cardEl.appendTo(notesDisplayEl);
+  $('#sticky-title').val('')
+  $('#sticky-description').val('')
+}
+/*  ------- [2.2 Sticky Note Memes] --------*/
+function createStickyMeme() {
   getApi(requestUrl);
-    console.log(memeImgURL);
-    var cardEl = $('<div>'); //ambigous Card
-    cardEl.addClass('card h-25 w-25 custom-card'); //add styling
-    cardEl.addClass('img-fluid');
-    var memeImgEl = $('<img>'); //add image tag 
-    memeImgEl.attr('src', memeImgURL);
-    memeImgEl.appendTo(cardEl);
-    cardEl.appendTo(memesDisplayEl);
+  console.log(memeImgURL);
+  var cardEl = $('<div>'); //ambigous Card
+  cardEl.addClass('card h-25 w-25 custom-card'); //add styling
+  cardEl.addClass('img-fluid');
+  var memeImgEl = $('<img>'); //add image tag 
+  memeImgEl.attr('src', memeImgURL);
+  memeImgEl.appendTo(cardEl);
+  cardEl.appendTo(memesDisplayEl);
 }
-createSticky("a note", "noted", "false");
-function handleStickyFormSubmit(event) {
-  event.preventDefault();
-  var stickyMeme = stickyIsMemeEl.val().trim(); 
-  console.log(stickyMeme);
-  var stickyName = stickyNameInputEl.val().trim();
-  console.log(stickyName);
-  var stickyDesc = stickyDescriptionInputEl.val().trim();
-  console.log(stickyDesc);
-  createSticky(stickyName, stickyDesc, stickyMeme)
-
-}
+/* ---------------[3 DatePicker] ------------*/
+$( function() {
+  $( "#datepicker" ).datepicker();
+} );
 function handleProjectFormSubmit(event) {
   event.preventDefault();
 
@@ -319,4 +330,40 @@ function handleProjectFormSubmit(event) {
 
   projectFormEl[0].reset();
 }
+/* -------------------[4 Event Create]------------ */
+/*-------[EventCreate Globals]--------*/
 
+function createAnEvent() {
+  /*-------[EventCreate Globals]--------*/
+  //Variable Population
+  var eventTitleEl = $('#events-title').val();
+  console.log(eventTitleEl);
+  var eventDescriptionEl = $('#events-desc').val();
+
+  console.log(eventDescriptionEl)
+  var datepickerEl = $('#datepicker').val();
+  console.log(datepickerEl);
+  
+  var N1 = eventName.push(eventTitleEl);
+  console.log(eventName);
+  var N2 = eventDate.push(moment().format('MM/DD/YYYY'));
+  console.log(eventDate);
+  var N3 = eventStartTime.push("00:00");
+  var N4 = eventEndTime.push("00:01");
+  var N2 = eventDescription.push(eventDescriptionEl);
+  console.log(eventDescription);
+
+  // var eventDescription = []
+  // var eventDate = []
+  // var eventStartTime = []
+  // var eventEndTime = []
+
+  //Populate Arrays
+}
+/*
+var eventName = ["name for Sunday, 12", "2 event name"]
+var eventDescription = ["desc for Sunday, 12", "desc for Monday"]
+var eventDate = ["Sunday, 12", "Monday, 13"]
+var eventStartTime = ["00:00", "01:00"]
+var eventEndTime = ["00:10", "02:00"]
+ */
