@@ -18,6 +18,10 @@ var projectFormEl = $('#project-form');
 var eventNameInputEl = $('#project-name-input');
 var startDateInputEl = $('#hourly-rate-input');
 var dueDateInputEl = $('#due-date-input');
+/* ------- [2. Sticky Notes] --------*/
+var stickyNameInputEl = $('#sticky-title')
+var stickyDescriptionInputEl = $('#sticky-description')
+var stickyIsMemeEl = $('#sticky-is-meme')
 /* STUFF */
 var w1displayEl = $('#1w');
 var w2displayEl = $('#2w');
@@ -27,6 +31,7 @@ var w5displayEl = $('#5w');
 var w6displayEl = $('#6w');
 var w7displayEl = $('#7w');
 var notesDisplayEl = $("#notesdisplay")
+var memesDisplayEl = $("#memesdisplay")
 
 var week1d = moment().subtract(1, 'days').format("dddd, DD");
 var week2d = moment().format("dddd, DD");
@@ -76,7 +81,7 @@ function toggleWeek() {
     }
   }
 }
-displayEventw1("name", "desc", "00:00", "00:01");
+// displayEventw1("name", "desc", "00:00", "00:01");
 function toggleMonth() {
   var toggleMonthEl = document.getElementById("toggleMonth");
   if (toggleMonthEl.style.display === "none") {
@@ -257,16 +262,29 @@ function getApi(requestUrl) {
     })
     .then(function (response) {
       console.log(response);
-      memeImgURL = response.data.memes[0].url;
+      
+      memeImgURL = response.data.memes[Math.floor(Math.random()*100)].url;
       console.log(memeImgURL);
-      createSticky("null","null","true")
+      // createSticky("null","null","true")
     });
 } //FINISH THIS
 
-getApi(requestUrl);
 
 function createSticky(eventName, eventDescription, isMeme){
-  if(isMeme === 'true'){
+  // Modal Input
+    var cardEl = $('<div>');
+    cardEl.addClass('card h-25 w-25 custom-card'); //add styling
+    cardEl.text(eventName);
+    var cardDescEl = $('<p>')
+    cardDescEl.addClass('card h-25 w-25 custom-card')
+    cardDescEl.text(eventDescription);
+    cardDescEl.appendTo(cardEl);
+    cardEl.appendTo(notesDisplayEl);
+} // FINISH THIS
+
+
+function createStickyMeme(){
+  getApi(requestUrl);
     console.log(memeImgURL);
     var cardEl = $('<div>'); //ambigous Card
     cardEl.addClass('card h-25 w-25 custom-card'); //add styling
@@ -274,26 +292,20 @@ function createSticky(eventName, eventDescription, isMeme){
     var memeImgEl = $('<img>'); //add image tag 
     memeImgEl.attr('src', memeImgURL);
     memeImgEl.appendTo(cardEl);
-    cardEl.appendTo(notesDisplayEl);
-  } else {
-  var cardEl = $('<div>');
-  // Add a class of .custom-card
-  cardEl.addClass('card h-100 custom-card');
-  cardEl.appendTo(notesDisplayEl);
-  var cardName = $('<h5>').addClass('card-header custom-card-header').text(eventName);
-  cardName.appendTo(cardEl);
+    cardEl.appendTo(memesDisplayEl);
+}
+createSticky("a note", "noted", "false");
+function handleStickyFormSubmit(event) {
+  event.preventDefault();
+  var stickyMeme = stickyIsMemeEl.val().trim(); 
+  console.log(stickyMeme);
+  var stickyName = stickyNameInputEl.val().trim();
+  console.log(stickyName);
+  var stickyDesc = stickyDescriptionInputEl.val().trim();
+  console.log(stickyDesc);
+  createSticky(stickyName, stickyDesc, stickyMeme)
 
-  var cardBodyEl = $('<div>');
-  cardBodyEl.addClass('card-body');
-  cardBodyEl.appendTo(cardEl);
-
-  var cardComment = $('<p>').addClass('card-text').text(eventDescription);
-  cardComment.appendTo(cardBodyEl);
-
-  notesDisplayEl.append(cardEl);
-  }
-} // FINISH THIS
-
+}
 function handleProjectFormSubmit(event) {
   event.preventDefault();
 
