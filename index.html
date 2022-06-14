@@ -25,9 +25,10 @@
     <main class="min-vh-100 bg-dark">
         <div class="container-fluid">
             <h1 class="display-2 text-light">TheOneCal</h1>
-            
+
             <!--EVENT Creator-->
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#eventCollapse" aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-primary button-34" type="button" data-toggle="collapse" data-target="#eventCollapse"
+                aria-expanded="false" aria-controls="collapseExample">
                 Write A Event!
             </button>
             <div class="collapse" id="eventCollapse">
@@ -43,124 +44,163 @@
                     <div class="form-text text-light">Event Date</div>
                     <input type="text" class="form-control" id="datepicker">
                 </div>
-                <button class="row button-34" id="notesCreate" type="btn" onclick="createAnEvent();">Create Event</button>
+                <button class="row button-34" id="notesCreate" type="btn" onclick="createAnEvent();">Create
+                    Event</button>
             </div>
             <!--WEEK VIEW DIV-->
             <button class="row button-34" type="btn" onclick="toggleWeek();">Week View Toggle</button>
             <div class="row align-items-center" id="toggleWeek">
-                <div class="col">
-                    <h1 id="1d" class="display-5 text-light">Day One</h1>
-                    <div class="h-100 p-3 border rounded-3" id="1w">
-                        <!--EVENTS CONTAINER-->
+                <div class="col-sm-6 col-md-3 col-lg-12 ">
+                    <div class="card day-of-the-week">
+                        <div class="card-body ">
+                            <h5 id="1d" class="display-5 card-title">Day One</h5>
+                            <div class="h-100 p-3 border rounded-3" id="1w">
+                                <!--EVENTS CONTAINER-->
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="weekContainers col">
-                    <h1 id="2d" class="display-5 text-light ">Day Two</h1>
-                    <div class="h-100 p-3 border rounded-3 border-info" id="2w">
-                        <!--EVENTS CONTAINER-->
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <div class="card day-of-the-week">
+                        <div class="card-body">
+                            <h5 id="2d" class="display-5 ">Day Two</h5>
+                            <div class="h-100 p-3 border rounded-3 border-info" id="2w">
+                                <!--EVENTS CONTAINER-->
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="weekContainers col">
-                    <h1 id="3d" class="display-5 text-light">Day Three</h1>
-                    <div class="h-100 p-3 border rounded-3" id="3w">
-                        <!--EVENTS CONTAINER-->
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <div class="card day-of-the-week">
+                        <div class="card-body">
+                            <h5 id="3d" class="display-5">Day Three</h5>
+                            <div class="h-100 p-3 border rounded-3" id="3w">
+                                <!--EVENTS CONTAINER-->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <div class="card day-of-the-week">
+                        <div class="card-body">
+                            <h5 id="4d" class="display-5">Day Four</h5>
+                            <div class="h-100 p-3 border rounded-3" id="4w">
+                                <!--EVENTS CONTAINER-->
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="weekContainers col">
-                    <h1 id="4d" class="display-5 text-light">Day Four</h1>
-                    <div class="h-100 p-3 border rounded-3" id="4w">
-                        <!--EVENTS CONTAINER-->
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <div class="card day-of-the-week">
+                        <div class="card-body">
+                            <h5 id="5d" class="display-5">Day Five</h5>
+                            <div class="h-100 p-3 border rounded-3" id="5w">
+                                <!--EVENTS CONTAINER-->
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="weekContainers col">
-                    <h1 id="5d" class="display-5 text-light">Day Five</h1>
-                    <div class="h-100 p-3 border rounded-3" id="5w">
-                        <!--EVENTS CONTAINER-->
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <div class="card day-of-the-week">
+                        <div class="card-body">
+                            <h5 id="6d" class="display-5">Day Six</h5>
+                            <div class="h-100 p-3 border rounded-3" id="6w">
+                                <!--EVENTS CONTAINER-->
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="weekContainers col">
-                    <h1 id="6d" class="display-5 text-light">Day Six</h1>
-                    <div class="h-100 p-3 border rounded-3" id="6w">
-                        <!--EVENTS CONTAINER-->
-                    </div>
-                </div>
-                <div class="weekContainers col">
-                    <h1 id="7d" class="display-5 text-light">Day Seven</h1>
-                    <div class="h-100 p-3 border rounded-3" id="7w">
-                        <!--EVENTS CONTAINER-->
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <div class="card day-of-the-week">
+                        <div class="card-body">
+                            <h5 id="7d" class="display-5">Day Seven</h5>
+                            <div class="h-100 p-3 border rounded-3" id="7w">
+                                <!--EVENTS CONTAINER-->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!--FORM FOR STICKY NOTES-->
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            Write A StickyNote!
-        </button>
-        <div class="collapse" id="collapseExample">
-            <div class="mb-1">
-                <label for="sticky-title" class="form-label text-light">Sticky Note Title:</label>
-                <input type="text" class="form-control" id="sticky-title" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-1">
-                <div class="form-text text-light">What will you notate?</div>
-                <input type="text" class="form-control" id="sticky-description">
-            </div>
-            <button class="row button-34" id="notesCreate" type="btn" onclick="createSticky();">Create Note</button>
-        </div>
-        <!--FORM FOR STICKY END-->
+        <div class="container row mt-5">
+            <div class="col-sm-12 col-md-6">
+                <button class="btn btn-primary button-34" type="button" data-toggle="collapse"
+                    data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Write A StickyNote!
+                </button>
+                <div class="collapse" id="collapseExample">
+                    <div class="mb-1">
+                        <label for="sticky-title" class="form-label text-light">Sticky Note Title:</label>
+                        <input type="text" class="form-control" id="sticky-title" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-1">
+                        <div class="form-text text-light">What will you notate?</div>
+                        <input type="text" class="form-control" id="sticky-description">
+                    </div>
+                    <button class="row button-34" id="notesCreate" type="btn" onclick="createSticky()">Create
+                        Note</button>
+                </div>
+                <!--FORM FOR STICKY END-->
 
-        <!--NOTES DISPLAY DIV-->
-        <div id="notesdisplay">
-            <button class="row button-34" id="memeCreate" type="btn" onclick="createStickyMeme();">Want Meme?</button>
-            
-            <!--CONTENT APPENDED IN JS-->
-        </div>
-        <div id="memesdisplay">
+                <!--NOTES DISPLAY DIV-->
+                <div id="notesdisplay">
+                    <!--CONTENT APPENDED IN JS-->
+                </div>
 
-        </div>
-        <!--NOTES DISPLAY DIV END-->
-        <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog">
-            <div class="row">
-                <section class="col-12 col-md-4 col-lg-3">
-                    <div class="card custom-card">
-                        <h3 class="card-header">
-                            Instructions
-                        </h3>
-                        <div class="card-body">
-                            <div class="card-text">
-                                Click the button below to open a form and provide information for the following:
+            </div>
+            <!--NOTES DISPLAY DIV END-->
+            <div class="col-sm-12 col-md-6">
+                <button class="row button-34" id="memeCreate" type="btn" onclick="createStickyMeme();">Want
+                    Meme?</button>
+                <div id="memesdisplay"></div>
+
+                <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog">
+                    <div class="row">
+                        <section class="col-12 col-md-4 col-lg-3">
+                            <div class="card custom-card">
+                                <h3 class="card-header">
+                                    Instructions
+                                </h3>
+                                <div class="card-body">
+                                    <div class="card-text">
+                                        Click the button below to open a form and provide information for the following:
+                                    </div>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Project Name</li>
+                                    <li class="list-group-item">Start Date</li>
+                                    <li class="list-group-item">Due Date</li>
+                                </ul>
+                                <div class="card-footer">
+                                    <button class="btn btn-block custom-btn" data-toggle="modal"
+                                        data-target="#project-modal">Add
+                                        Project</button>
+                                </div>
                             </div>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Project Name</li>
-                            <li class="list-group-item">Start Date</li>
-                            <li class="list-group-item">Due Date</li>
-                        </ul>
-                        <div class="card-footer">
-                            <button class="btn btn-block custom-btn" data-toggle="modal"
-                                data-target="#project-modal">Add
-                                Project</button>
-                        </div>
-                    </div>
-                </section>
+                        </section>
 
-                <section class="col-12 col-md-8 col-lg-9">
-                    <div class="table-responsive">
-                        <table class="table table-bordered custom-table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Project Name</th>
-                                    <th scope="col">Project Type</th>
-                                    <th scope="col">Due Date</th>
-                                    <th scope="col" class="p-3"></th>
-                                </tr>
-                            </thead>
-                            <tbody id="project-display"></tbody>
-                        </table>
+                        <section class="col-12 col-md-8 col-lg-9">
+                            <div class="table-responsive">
+                                <table class="table table-bordered custom-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Project Name</th>
+                                            <th scope="col">Project Type</th>
+                                            <th scope="col">Due Date</th>
+                                            <th scope="col" class="p-3"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="project-display"></tbody>
+                                </table>
+                            </div>
+                        </section>
                     </div>
-                </section>
+                </div>
             </div>
+        </div>
     </main>
 
     <!-- Modal -->
@@ -209,7 +249,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        
+
     <!--Jquery-->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -224,7 +264,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!--Moment-->
     <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/apis.js"></script>
+    <!-- <script src="./assets/js/apis.js"></script> -->
     <!--JAVASCRIPT GOES LAST-->
 </body>
 

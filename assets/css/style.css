@@ -29,3 +29,7 @@
   background-color: var(--teal);
   color: var(--lightteal);
 }
+
+.day-of-the-week {
+  min-height: 360px;
+}
