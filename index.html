@@ -25,10 +25,11 @@
     <main class="min-vh-100 bg-dark">
         <div class="container-fluid">
             <h1 class="display-2 text-light">TheOneCal</h1>
-            
+
             <!--EVENT Creator-->
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#eventCollapse" aria-expanded="false" aria-controls="collapseExample">
-                Write A Event!
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#eventCollapse"
+                aria-expanded="false" aria-controls="collapseExample">
+                Write An Event!
             </button>
             <div class="collapse" id="eventCollapse">
                 <div class="mb-1">
@@ -43,7 +44,8 @@
                     <div class="form-text text-light">Event Date</div>
                     <input type="text" class="form-control" id="datepicker">
                 </div>
-                <button class="row button-34" id="notesCreate" type="btn" onclick="createAnEvent();">Create Event</button>
+                <button class="row button-34" id="notesCreate" type="btn" onclick="createAnEvent();">Create
+                    Event</button>
             </div>
             <!--WEEK VIEW DIV-->
             <button class="row button-34" type="btn" onclick="toggleWeek();">Week View Toggle</button>
@@ -94,7 +96,8 @@
         </div>
 
         <!--FORM FOR STICKY NOTES-->
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+            aria-expanded="false" aria-controls="collapseExample">
             Write A StickyNote!
         </button>
         <div class="collapse" id="collapseExample">
@@ -113,14 +116,14 @@
         <!--NOTES DISPLAY DIV-->
         <div id="notesdisplay">
             <button class="row button-34" id="memeCreate" type="btn" onclick="createStickyMeme();">Want Meme?</button>
-            
+
             <!--CONTENT APPENDED IN JS-->
         </div>
         <div id="memesdisplay">
 
         </div>
         <!--NOTES DISPLAY DIV END-->
-        <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog">
+        <div class="container-fluid">
             <div class="row">
                 <section class="col-12 col-md-4 col-lg-3">
                     <div class="card custom-card">
@@ -142,22 +145,6 @@
                                 data-target="#project-modal">Add
                                 Project</button>
                         </div>
-                    </div>
-                </section>
-
-                <section class="col-12 col-md-8 col-lg-9">
-                    <div class="table-responsive">
-                        <table class="table table-bordered custom-table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Project Name</th>
-                                    <th scope="col">Project Type</th>
-                                    <th scope="col">Due Date</th>
-                                    <th scope="col" class="p-3"></th>
-                                </tr>
-                            </thead>
-                            <tbody id="project-display"></tbody>
-                        </table>
                     </div>
                 </section>
             </div>
@@ -209,7 +196,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        
+
     <!--Jquery-->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -222,6 +209,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment-with-locales.min.js"
         integrity="sha512-vFABRuf5oGUaztndx4KoAEUVQnOvAIFs59y4tO0DILGWhQiFnFHiR+ZJfxLDyJlXgeut9Z07Svuvm+1Jv89w5g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js">
+    </script>
     <!--Moment-->
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/apis.js"></script>

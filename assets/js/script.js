@@ -93,17 +93,17 @@ function toggleWeek() {
 function createAnEvent() {
   /*-------[EventCreate Globals]--------*/
   //Variable Population
-var eventTitleEl = $('#events-title').val();
-console.log(eventTitleEl);
+  var eventTitleEl = $('#events-title').val();
+  console.log(eventTitleEl);
 
-var eventDescriptionEl = $('#events-desc').val();
-console.log(eventDescriptionEl)
-  
-var datepickerEl = $('#datepicker').val();
-console.log(datepickerEl);
+  var eventDescriptionEl = $('#events-desc').val();
+  console.log(eventDescriptionEl)
 
-var eventStartTimeEl = "00:00"
-var eventEndTimeEl = "00:01"
+  var datepickerEl = $('#datepicker').val();
+  console.log(datepickerEl);
+
+  var eventStartTimeEl = "00:00"
+  var eventEndTimeEl = "00:01"
 
 
   //Populate Arrays
@@ -323,9 +323,9 @@ function createStickyMeme() {
   cardEl.appendTo(memesDisplayEl);
 }
 /* ---------------[3 DatePicker] ------------*/
-$( function() {
-  $( "#datepicker" ).datepicker();
-} );
+$(function () {
+  $("#datepicker").datepicker();
+});
 function handleProjectFormSubmit(event) {
   event.preventDefault();
 
@@ -338,6 +338,32 @@ function handleProjectFormSubmit(event) {
 
   projectFormEl[0].reset();
 }
+
+$(document).ready(function () {
+
+  $(function () {
+    $("#start-date-input").datepicker({});
+  });
+
+  $(function () {
+    $("#due-date-input").datepicker({});
+  });
+
+  $('#start-day-input').change(function () {
+    startDate = $(this).datepicker('getDate');
+    $("#due-date-input").datepicker("option", "minDate", startDate);
+  })
+
+  $('#due-day-input').change(function () {
+    endDate = $(this).datepicker('getDate');
+    $("#start-day-input").datepicker("option", "maxDate", endDate);
+  })
+})
+
+projectFormEl.on('submit', handleProjectFormSubmit);
+projectDisplayEl.on('click', '.delete-project-btn', handleDeleteProject);
+dueDateInputEl.datepicker({ minDate: 1 });
+
 /* -------------------[4 Event Create]------------ */
 /*-------[EventCreate Globals]--------*/
 
@@ -351,7 +377,7 @@ function createAnEvent() {
   console.log(eventDescriptionEl)
   var datepickerEl = $('#datepicker').val();
   console.log(datepickerEl);
-  
+
   var N1 = eventName.push(eventTitleEl);
   console.log(eventName);
   var N2 = eventDate.push(datepickerEl);
