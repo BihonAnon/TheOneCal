@@ -18,10 +18,7 @@ var projectFormEl = $('#project-form');
 var eventNameInputEl = $('#project-name-input');
 var startDateInputEl = $('#hourly-rate-input');
 var dueDateInputEl = $('#due-date-input');
-/* ------- [2. Sticky Notes] --------*/
-var stickyNameInputEl = $('#sticky-title')
-var stickyDescriptionInputEl = $('#sticky-description')
-var stickyIsMemeEl = $('#sticky-is-meme')
+
 /* STUFF */
 var w1displayEl = $('#1w');
 var w2displayEl = $('#2w');
@@ -269,8 +266,10 @@ function getApi(requestUrl) {
     });
 } //FINISH THIS
 
-
-function createSticky(eventName, eventDescription, isMeme){
+/* ------- [2. Sticky Notes] --------*/
+function createSticky(){
+  var eventName = $('#sticky-title').val()
+  var eventDescription = $('#sticky-description').val()
   // Modal Input
     var cardEl = $('<div>');
     cardEl.addClass('card h-25 w-25 custom-card'); //add styling
@@ -280,6 +279,8 @@ function createSticky(eventName, eventDescription, isMeme){
     cardDescEl.text(eventDescription);
     cardDescEl.appendTo(cardEl);
     cardEl.appendTo(notesDisplayEl);
+    $('#sticky-title').val('')
+    $('#sticky-description').val('')
 } // FINISH THIS
 
 
