@@ -32,13 +32,13 @@ var notesDisplayEl = $("#notesdisplay")
 var memesDisplayEl = $("#memesdisplay")
 
 /*------[Weeks ] ----*/
-var week1d = moment().subtract(1, 'days').format("dddd, DD");
-var week2d = moment().format("dddd, DD");
-var week3d = moment().add(1, 'days').format("dddd, DD");
-var week4d = moment().add(2, 'days').format("dddd, DD");
-var week5d = moment().add(3, 'days').format("dddd, DD");
-var week6d = moment().add(4, 'days').format("dddd, DD");
-var week7d = moment().add(5, 'days').format("dddd, DD");
+// var week1d = moment().subtract(1, 'days').format("dddd, DD");
+// var week2d = moment().format("dddd, DD");
+// var week3d = moment().add(1, 'days').format("dddd, DD");
+// var week4d = moment().add(2, 'days').format("dddd, DD");
+// var week5d = moment().add(3, 'days').format("dddd, DD");
+// var week6d = moment().add(4, 'days').format("dddd, DD");
+// var week7d = moment().add(5, 'days').format("dddd, DD");
 
 function toggleWeek() {
   var toggleWeekEl = document.getElementById("toggleWeek");
@@ -67,6 +67,7 @@ function toggleWeek() {
       displayEventw1(eventName[i], eventDescription[i], eventStartTime[i], eventEndTime[i])
     } else if (week2d === eventDate[i]) {
       displayEventw2(eventName[i], eventDescription[i], eventStartTime[i], eventEndTime[i])
+      
     } else if (week3d === eventDate[i]) {
       displayEventw3(eventName[i], eventDescription[i], eventStartTime[i], eventEndTime[i])
     } else if (week4d === eventDate[i]) {
@@ -111,7 +112,7 @@ function toggleMonth() {
 }
 function displayEventw1(eventName, eventDescription, eventStartTime, eventEndTime) {
   //APPENDS cardEl to "display" //EVENT DISPLAY FUNCTIONS START
-  w1displayEl.empty();
+  // w1displayEl.empty();
   var cardEl = $('<div>');
   // Add a class of .custom-card
   cardEl.addClass('card h-100 custom-card');
@@ -133,7 +134,7 @@ function displayEventw1(eventName, eventDescription, eventStartTime, eventEndTim
 }
 function displayEventw2(eventName, eventDescription, eventStartTime, eventEndTime) {
   //APPENDS cardEl to "display"
-  w2displayEl.empty()
+  // w2displayEl.empty()
   var cardEl = $('<div>');
   // Add a class of .custom-card
   cardEl.addClass('card h-100 custom-card');
@@ -155,7 +156,7 @@ function displayEventw2(eventName, eventDescription, eventStartTime, eventEndTim
 }
 function displayEventw3(eventName, eventDescription, eventStartTime, eventEndTime) {
   //APPENDS cardEl to "display"
-  w3displayEl.empty();
+  // w3displayEl.empty();
   var cardEl = $('<div>');
   // Add a class of .custom-card
   cardEl.addClass('card h-100 custom-card');
@@ -177,7 +178,7 @@ function displayEventw3(eventName, eventDescription, eventStartTime, eventEndTim
 }
 function displayEventw4(eventName, eventDescription, eventStartTime, eventEndTime) {
   //APPENDS cardEl to "display"
-  w4displayEl.empty();
+  // w4displayEl.empty();
   var cardEl = $('<div>');
   // Add a class of .custom-card
   cardEl.addClass('card h-100 custom-card');
@@ -199,7 +200,7 @@ function displayEventw4(eventName, eventDescription, eventStartTime, eventEndTim
 }
 function displayEventw5(eventName, eventDescription, eventStartTime, eventEndTime) {
   //APPENDS cardEl to "display"
-  w5displayEl.empty();
+  // w5displayEl.empty();
   var cardEl = $('<div>');
   // Add a class of .custom-card
   cardEl.addClass('card h-100 custom-card');
@@ -221,7 +222,7 @@ function displayEventw5(eventName, eventDescription, eventStartTime, eventEndTim
 }
 function displayEventw6(eventName, eventDescription, eventStartTime, eventEndTime) {
   //APPENDS cardEl to "display"
-  w6displayEl.empty();
+  // w6displayEl.empty();
   var cardEl = $('<div>');
   // Add a class of .custom-card
   cardEl.addClass('card h-100 custom-card');
@@ -243,7 +244,7 @@ function displayEventw6(eventName, eventDescription, eventStartTime, eventEndTim
 }
 function displayEventw7(eventName, eventDescription, eventStartTime, eventEndTime) {
   //APPENDS cardEl to "display"
-  w7displayEl.empty();
+  // w7displayEl.empty();
   var cardEl = $('<div>');
   // Add a class of .custom-card
   cardEl.addClass('card h-100 custom-card');
