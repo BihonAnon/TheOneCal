@@ -61,13 +61,20 @@ function toggleWeek() {
   $("#6d").text(week6d);
   var week7d = moment().add(5, 'days').format('MM/DD/YYYY');
   $("#7d").text(week7d);
+  w1displayEl.empty();
+  w2displayEl.empty();
+  w3displayEl.empty();
+  w4displayEl.empty();
+  w5displayEl.empty();
+  w6displayEl.empty();
+  w7displayEl.empty();
   for (let i = 0; i < eventDate.length; i++) {
+    console.log(week1d + "===" + eventDate[i])
     if (week1d === eventDate[i]) {
       console.log(eventName[i], eventDescription[i], eventStartTime[i], eventEndTime[i])
       displayEventw1(eventName[i], eventDescription[i], eventStartTime[i], eventEndTime[i])
     } else if (week2d === eventDate[i]) {
       displayEventw2(eventName[i], eventDescription[i], eventStartTime[i], eventEndTime[i])
-      
     } else if (week3d === eventDate[i]) {
       displayEventw3(eventName[i], eventDescription[i], eventStartTime[i], eventEndTime[i])
     } else if (week4d === eventDate[i]) {
@@ -347,7 +354,7 @@ function createAnEvent() {
   
   var N1 = eventName.push(eventTitleEl);
   console.log(eventName);
-  var N2 = eventDate.push(moment().format('MM/DD/YYYY'));
+  var N2 = eventDate.push(datepickerEl);
   console.log(eventDate);
   var N3 = eventStartTime.push("00:00");
   var N4 = eventEndTime.push("00:01");
