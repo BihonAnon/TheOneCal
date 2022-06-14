@@ -84,6 +84,8 @@ div#memesdisplay {
 }
 
 .solution_card {
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(0deg, rgb(102, 193, 184) 0%, rgb(237, 249, 248) 63%);
   padding: 24px;
   box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2),

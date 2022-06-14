@@ -3,6 +3,8 @@ let temp = 0;
 let city = "";
 let iconcode;
 let iconUrl;
+let humidity;
+let feelsLike;
 // function getLocation() {
 //   if (navigator.geolocation) {
 //     navigator.geolocation.getCurrentPosition(function (position) {
@@ -33,6 +35,8 @@ function fetchaApi(lat, long) {
       city = data.name;
       iconcode = data.weather[0].icon
       iconUrl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+      humidity = data.main.humidity;
+      feelsLike = data.main.feels_like;
 
       displayWeather();
     })
@@ -43,7 +47,12 @@ function displayWeather() {
   let monday = $('#monday')
   let firstDiv = $('#first-day')
   let weatherDiv = $('<div>')
+  let cityElement = $("<div>")
   let spanEl = $('<span>')
+  let humidityElement = $('<span>')
+  let feelsLikeElement = $('<span>')
+
+
   let iconEl = $('<img>')
 
   firstDiv.attr("class", "card-body col-sm-12 col-md-6")
@@ -53,10 +62,15 @@ function displayWeather() {
   spanEl.attr("class", "wheather-city")
   iconEl.attr("src", iconUrl)
   iconEl.attr("class", "icoon")
+  humidityElement.attr("class", "wheather-city")
+  feelsLikeElement.attr("class", "wheather-city")
 
-  console.log(iconUrl)
-  spanEl.append(city + "      " + temp + " ")
 
-  weatherDiv.append(spanEl, iconEl)
+  spanEl.append(city + "      " + temp + "°")
+  humidityElement.append("Humidity: " + humidity + "°")
+  feelsLikeElement.append("Feels Like: " + feelsLike + "°")
+
+  cityElement.append(spanEl, iconEl)
+  weatherDiv.append(cityElement, humidityElement, feelsLikeElement)
   monday.append(weatherDiv)
 }
